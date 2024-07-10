@@ -8,4 +8,13 @@ Download the download_ncbi_databases.sh script from the scripts/ directory above
 
 ## all_busco.sh
 
-Download the all_busco.sh script from the scripts/ directory above. Change the username on lines 10,12 and 15 for the slurm output file location, email address and directory in which the script operates. The name of the busco module on line 16 may also need to be edited, to search for your HPC's busco module use: ``` module avail busco```, if it is not listed create a conda environment: ```conda create -n busco_env -c conda-forge -c bioconda busco``` and activate the environment ```conda activate busco_env```. To execute the script on a HPC use ```sbatch all_busco.sh``` to execute as a bash script simply: ```chmod +x all_busco.sh``` then  ```./all_busco.sh```.
+Download the all_busco.sh script from the scripts/ directory above. Change the username on lines 10,12 and 15 for the slurm output file location, email address and directory in which the script operates. The name of the busco module on line 16 may also need to be edited, to search for your HPC's busco module use: ``` module avail busco```, if it is not listed create a conda environment: ```conda create -n busco_env -c conda-forge -c bioconda busco``` and activate the environment ```conda activate busco_env```. To execute the script on a HPC use ```sbatch all_busco.sh``` to execute as a bash script simply: ```chmod +x all_busco.sh``` then  ```./all_busco.sh```. This script will download the eukaryota_odb10 directory and run busco on all files in the genomic_fna_files/ directory. It will then produce an all.txt file which contains all the species busco results, which can be found in the supplementary files directory.
+
+## busco_1_remove_lines.py, busco_2_remove_specaes.sh, busco_3_columns_to_rows.py and busco_4_add_headers.sh 
+
+These files will take the all.txt file produced by **all_busco.sh** and convert it to an easier to read .tsv file which can be viewed in excel. The file produced is called all_busco.tsv and can be found in the supplementary files directory. To run the above scripts use the **execute.sh** script by ```chmod +x execute.sh``` then ```./execute.sh```. Ensure all relevant files and scripts are in the directory you are working in. 
+
+## all_blast.sh
+
+Download the all_blast.sh script from the scripts/ directory and the reference.fasta file from the supplementary_files/ directory. This script will install blast, create a reference database with the reference.fasta file, run blast on all the species in the faa_files/ directory created earlier and create a merged file of all the data called blast_output.tsv (which can be found in the supplementary files directory). To execute this script either submit as a batch job (preferable): ```sbatch all_blast.sh``` or as a bash script ```chmod +x all_blast.sh``` then ```./all_blast.sh```.
+
