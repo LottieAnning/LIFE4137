@@ -18,3 +18,9 @@ These files will take the all.txt file produced by **all_busco.sh** and convert 
 
 Download the all_blast.sh script from the scripts/ directory and the reference.fasta file from the supplementary_files/ directory. This script will install blast, create a reference database with the reference.fasta file, run blast on all the species in the faa_files/ directory created earlier and create a merged file of all the data called blast_output.tsv (which can be found in the supplementary files directory). To execute this script either submit as a batch job (preferable): ```sbatch all_blast.sh``` or as a bash script ```chmod +x all_blast.sh``` then ```./all_blast.sh```.
 
+## search_protein_ids.py
+
+Download the search_protein_ids.py script from the scripts/ directory above. This script will take the blast_output.tsv file created earlier and add a new column with gene ids. Execute this script in the cds_fna_files/ directory, with the blast_output.tsv file in it. To run the script simply use the ```python3 search_protein_ids.py``` command. The new file will be called check_isoforms.tsv.
+
+##
+
