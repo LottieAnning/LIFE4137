@@ -46,5 +46,4 @@ def search_protein_in_files(tsv_file, output_tsv):
         writer = csv.writer(file, delimiter='\t')
         writer.writerows(updated_rows)
 
-# Replace 'input.tsv' with your actual input TSV file name and 'output.tsv' with your desired output file name
 search_protein_in_files('blast_output.tsv', 'check_isoforms.tsv')
