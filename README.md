@@ -26,6 +26,12 @@ Download the search_protein_ids.py script from the scripts/ directory above. Thi
 
 Download the create_all_nt_fasta.py script from the scripts/ directory above. This script will create a file called all_nt.fasta which contains all the nucleotide sequences for all the species, it will give each sequence a header in the format "proteinid_speciesname". To execute this script run ```python3 create_all_nt_fasta.py``` in the cds_fna_files/ directory created earlier and the blast_output.tsv file (you may want to move or copy this file).
 
+## convert_to_codons.py
+
+Download the convert_to_codons.py script from the scripts/ directory above. This script will take the fasta file that was produced earlier (all_nt.fasta) and externally ran through translatorx, now called translatorx.fasta, and seperated the nucleotides in groups of threes (aka codons). The file produced from this script is the codon.nuc file, later used in PAML.
+
 ## create_all_aa_fasta.py
 
 Download the create_all_aa_fasta.py script from the scripts/ directory above. This script will create a file called all_aa.fasta which contains all the amino acid sequences for all the species, it will give each sequence a header in the format "proteinid_speciesname". To execute this script run ```python3 create_all_aa_fasta.py``` in the faa_files/ directory created earlier and the blast_output.tsv file (you may want to move or copy this file).
+
+
