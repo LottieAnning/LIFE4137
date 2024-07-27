@@ -22,5 +22,10 @@ Download the all_blast.sh script from the scripts/ directory and the reference.f
 
 Download the search_protein_ids.py script from the scripts/ directory above. This script will take the blast_output.tsv file created earlier and add a new column with gene ids. Execute this script in the cds_fna_files/ directory, with the blast_output.tsv file in it. To run the script simply use the ```python3 search_protein_ids.py``` command. The new file will be called check_isoforms.tsv.
 
-##
+## create_all_nt_fasta.py
 
+Download the create_all_nt_fasta.py script from the scripts/ directory above. This script will create a file called all_nt.fasta which contains all the nucleotide sequences for all the species, it will give each sequence a header in the format "proteinid_speciesname". To execute this script run ```python3 create_all_nt_fasta.py``` in the cds_fna_files/ directory created earlier and the blast_output.tsv file (you may want to move or copy this file).
+
+## create_all_aa_fasta.py
+
+Download the create_all_aa_fasta.py script from the scripts/ directory above. This script will create a file called all_aa.fasta which contains all the amino acid sequences for all the species, it will give each sequence a header in the format "proteinid_speciesname". To execute this script run ```python3 create_all_aa_fasta.py``` in the faa_files/ directory created earlier and the blast_output.tsv file (you may want to move or copy this file).
