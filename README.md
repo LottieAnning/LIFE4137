@@ -10,32 +10,46 @@ Download the download_ncbi_databases.sh script from the scripts/ directory above
 
 Download the all_busco.sh script from the scripts/ directory above. Change the username on lines 10,12 and 15 for the slurm output file location, email address and directory in which the script operates. The name of the busco module on line 16 may also need to be edited, to search for your HPC's busco module use: ``` module avail busco```, if it is not listed create a conda environment: ```conda create -n busco_env -c conda-forge -c bioconda busco``` and activate the environment ```conda activate busco_env```. To execute the script on a HPC use ```sbatch all_busco.sh``` to execute as a bash script simply: ```chmod +x all_busco.sh``` then  ```./all_busco.sh```. This script will download the eukaryota_odb10 directory and run busco on all files in the genomic_fna_files/ directory. It will then produce an all.txt file which contains all the species busco results, which can be found in the supplementary files directory.
 
-## busco_1_remove_lines.py, busco_2_remove_specaes.sh, busco_3_columns_to_rows.py and busco_4_add_headers.sh 
+## busco_1_remove_lines.py, busco_2_remove_specaes.sh, busco_3_columns_to_rows.py, busco_4_add_headers.sh and execute.sh
 
-These files will take the all.txt file produced by **all_busco.sh** and convert it to an easier to read .tsv file which can be viewed in excel. The file produced is called all_busco.tsv and can be found in the supplementary files directory. To run the above scripts use the **execute.sh** script by ```chmod +x execute.sh``` then ```./execute.sh```. Ensure all relevant files and scripts are in the directory you are working in. 
+Download the busco_1_remove_lines.py, busco_2_remove_specaes.sh, busco_3_columns_to_rows.py, busco_4_add_headers.sh and execute.sh scripts from the scripts/ directory above. These scripts will take the all.txt file produced by **all_busco.sh** and convert it to an easier to read .tsv file which can be viewed in excel. The file produced is called supplementary_file_2.tsv and can be found in the supplementary files directory. To run the above scripts use the **execute.sh** script by ```chmod +x execute.sh``` then ```./execute.sh```. Ensure all relevant files and scripts are in the directory you are working in. 
 
 ## all_blast.sh
 
-Download the all_blast.sh script from the scripts/ directory and the reference.fasta file from the supplementary_files/ directory. This script will install blast, create a reference database with the reference.fasta file, run blast on all the species in the faa_files/ directory created earlier and create a merged file of all the data called blast_output.tsv (which can be found in the supplementary files directory). To execute this script either submit as a batch job (preferable): ```sbatch all_blast.sh``` or as a bash script ```chmod +x all_blast.sh``` then ```./all_blast.sh```.
+Download the all_blast.sh script from the scripts/ directory and the reference.fasta file from the supplementary_files/ directory (this is the *Homo sapien* amino acid sequence for the RPS18 protien, downloaded from NCBI). This script will install blast, create a reference database with the reference.fasta file, run blast on all the species in the faa_files/ directory created earlier and create a merged file of all the data called supplementary_file_3.tsv (which can be found in the supplementary files directory). To execute this script either submit as a batch job (preferable): ```sbatch all_blast.sh``` or as a bash script ```chmod +x all_blast.sh``` then ```./all_blast.sh```.
 
 ## search_protein_ids.py
 
-Download the search_protein_ids.py script from the scripts/ directory above. This script will take the blast_output.tsv file created earlier and add a new column with gene ids. Execute this script in the cds_fna_files/ directory, with the blast_output.tsv file in it. To run the script simply use the ```python3 search_protein_ids.py``` command. The new file will be called check_isoforms.tsv.
+Download the search_protein_ids.py script from the scripts/ directory above. This script will take the blast output (supplementary_file_3.tsv) file created earlier and add a new column with gene ids. Execute this script in the cds_fna_files/ directory, with the supplementary_file_3.tsv file in it. To run the script simply use the ```python3 search_protein_ids.py``` command. The new file will be called check_isoforms.tsv (which can be found in the supplementary files directory). 
 
 ## create_all_nt_fasta.py
 
-Download the create_all_nt_fasta.py script from the scripts/ directory above. This script will create a file called all_nt.fasta which contains all the nucleotide sequences for all the species, it will give each sequence a header in the format "proteinid_speciesname". To execute this script run ```python3 create_all_nt_fasta.py``` in the cds_fna_files/ directory created earlier and the blast_output.tsv file (you may want to move or copy this file).
-
-## convert_to_codons.py
-
-Download the convert_to_codons.py script from the scripts/ directory above. This script will take the fasta file that was produced earlier (all_nt.fasta) and externally ran through translatorx, now called translatorx.fasta, and seperated the nucleotides in groups of threes (aka codons). The file produced from this script is the codon.nuc file, later used in PAML.
-
-## create_all_aa_fasta.py
-
-Download the create_all_aa_fasta.py script from the scripts/ directory above. This script will create a file called all_aa.fasta which contains all the amino acid sequences for all the species, it will give each sequence a header in the format "proteinid_speciesname". To execute this script run ```python3 create_all_aa_fasta.py``` in the faa_files/ directory created earlier and the blast_output.tsv file (you may want to move or copy this file).
+Download the create_all_nt_fasta.py script from the scripts/ directory above. This script will create a file called all_nt.fasta which contains all the nucleotide sequences for all the species, it will give each sequence a header in the format "proteinid_speciesname". To execute this script run ```python3 create_all_nt_fasta.py``` in the cds_fna_files/ directory created earlier and the blast output supplementary_file_3.tsv file (you may want to move or copy this file).
 
 ## trimal.sh
 
+Download the trimal.sh script from the scripts/ directory above. This script will use homebrew to install Trimal and run the software on the msa_all_aa.aln and msa_all_nt.aln alignment files, producing aa_alignment.aln and nt_alignment.msa respectively.
+
+## convert_to_codons.py
+
+Download the convert_to_codons.py script from the scripts/ directory above. This script will take the fasta file that was produced earlier now called translatorx.fasta (which is the all_nt.fasta externally ran through translatorx), and seperated the nucleotides in groups of threes (aka codons). The file produced from this script is the codon.nuc file (which can be found in the supplementary files directory) which later used in PAML.
+
+## create_all_aa_fasta.py
+
+Download the create_all_aa_fasta.py script from the scripts/ directory above. This script will create a file called all_aa.fasta which contains all the amino acid sequences for all the species, it will give each sequence a header in the format "proteinid_speciesname". To execute this script run ```python3 create_all_aa_fasta.py``` in the faa_files/ directory created earlier and the blast output supplementary_file_3.tsv file (you may want to move or copy this file).
+
+## process_tsv.py
+
+Download the process_tsv.py script from the scripts/ directory above. This script will take supplementary_file_3.tsv file, produced earlier with the all_blast.sh script and create a new file 'mapping.link' for GeneRax. To execute this script run ```python3 process_tsv.py``` in the same directory as supplementary_file_3.tsv.
+
 ## iqtree.sh
 
+Download the iqtree.sh script from the scripts/ directory above. This script will run IQtree on aa_alignment.aln (produced by the create_all_aa_fasta.py and trimal.sh scripts). The files produced from this are: aa_alignment.aln.bionj, aa_alignment.aln.ckp.gz, aa_alignment.aln.iqtree, aa_alignment.aln.log, aa_alignment.aln.mldist, aa_alignment.aln.model.gz, aa_alignment.aln.treefile, aa_alignment.aln.uniqueseq.phy. The tree file is the gene tree used for GeneRax, this needs to be renamed: ```mv aa_alignment.aln.treefile iqtree.newick```, this file can be found in the supplementary files directory above. To obtain the best fit model run ```grep "Best-fit model" aa_alignment.aln.log ```, in this case it was GTR+I+G.
+
 ## generax.sh
+
+Download the generax.sh script from the scripts/ directory above. This script also requires the files families.txt, eukarya.newick, iqtree.newick, mapping.link and nt_alignment.msa. As mentioned earlier, it used the best-fit model from IQtree (GTR+I+G). This run used a duplication and loss model, specified by the ```--rec-model UndatedDL``` parameter, to add horizontal gene transfers use ```--rec-model UndatedDTL```. The prefix is set to 'generax', so all files will be located in a directory called 'generax/', to change this change the ```--prefix generax``` parameter. The ```--strategy EVAL``` parameter specifies using the gene tree inference evaluation strategy to use for the inference. This produces the files and directories: fractionMissing.txt, gene_optimization_0/, generax.log, perSpeciesCoverage.txt, per_species_event_counts.txt, per_species_pair_transfers.txt, reconciliations/, results/, species_trees/, stats.txt. To obtain the reconciled gene tree upload the .nhx file from the reconciliations directory to the Notung software (use the Notung-2.9.1.5.zip download link on https://amberjack.compbio.cs.cmu.edu/Notung/download.html).
+
+## paml.sh
+
+To set up the paml environment, download the source files by running ```git clone https://github.com/abacus-gene/paml```, unzip the file ```gunzip paml-4.10.7-macosx-X86_64.tgz```, navigate to the src directory ```cd src```, in the Makefile file change 'icc' on line 2 to 'gcc' (can use ```nano Makefile``` to do this), then compile the program: ```make```, ```rm *.o```, ```mv baseml basemlg codeml pamp evolver yn00 chi2 ../bin```, ```../bin/codeml```.
