@@ -1,4 +1,4 @@
-headers_file_path = '../headers.txt'
+headers_file_path = 'all_headers.txt'
 
 # Read the headers from the file headers file as directories
 with open(headers_file_path, 'r') as file:
@@ -17,8 +17,8 @@ template = """#!/bin/bash
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=[username]@exmail.nottingham.ac.uk
 
-cd /home/[username]/Paml/{directory_name}
-../bin/codeml controlfile.ctl
+cd /home/[username]/Paml/Results/{directory_name}
+../../bin/codeml controlfile.ctl
 """
 
 for directory in directories:
