@@ -18,7 +18,7 @@ conda install iqtree
 iqtree -v
 
 # Run iqtree to search for the best tree model and run it:
-iqtree -redo -s aa_alignment.aln -st AA -m MFP	# best model: Q.insect+I+G4
+iqtree -redo -s aa_alignment.aln -st AA -m MFP
 
 # deactivate conda environment
 conda deactivate
