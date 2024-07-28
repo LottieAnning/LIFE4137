@@ -1,5 +1,5 @@
 [FAMILIES]
-- us13
+- RPS18
 starting_gene_tree = iqtree.newick
 alignment = nt_alignment.msa
 mapping = mapping.link
