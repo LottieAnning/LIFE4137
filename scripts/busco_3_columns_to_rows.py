@@ -1,5 +1,5 @@
 input_file = 'temp2.tsv'
-output_file = 'all_busco.tsv'
+output_file = 'supplementary_file_2.tsv'
 chunk_size = 13
 
 def combine_lines(lines, chunk_size):
