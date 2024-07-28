@@ -1,0 +1,6 @@
+[FAMILIES]
+- us13
+starting_gene_tree = iqtree.newick
+alignment = nt_alignment.msa
+mapping = mapping.link
+subst_model = GTR+I+G
