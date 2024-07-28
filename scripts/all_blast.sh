@@ -50,11 +50,11 @@ for file in blast/blast_*.tsv; do
 done
 
 # Merge all files to a combined results file
-cat result_*.tsv > blast_output.tsv
+cat result_*.tsv > supplementary_file_3.tsv
 
 # Add headers to file
 headers="Species\tQuery sequence ID\tSubject sequence ID\tPercentage identity\tAlignment length\tNumber of mismatches\tNumber of gap openings\tStart of alignment in query\tEnd of alignment in query\tStart of alignment in subject\tEnd of alignment in subject\tE-value\tBit score"
-file="blast_output.tsv"
+file="supplementary_file_3.tsv"
 echo -e "$headers\n$(cat "$file")" > temp_file && mv temp_file "$file"
 
 
