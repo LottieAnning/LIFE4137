@@ -1,4 +1,5 @@
-# This script executes the following scripts: busco_1_remove_lines.py, busco_2_remove_specaes.sh, busco_3_columns_to_rows.py and busco_4_add_headers.sh 
+# Source: myself (Charlotte Anning, 20150512)
+# This SHELL job script executes the following scripts: busco_1_remove_lines.py, busco_2_remove_specaes.sh, busco_3_columns_to_rows.py and busco_4_add_headers.sh 
 
 python3 busco_1_remove_lines.py
 
