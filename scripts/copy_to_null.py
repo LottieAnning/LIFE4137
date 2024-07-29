@@ -1,3 +1,6 @@
+# Source: myself (Charlotte Anning, 20150512)
+# This PYTHON job script is used to copy the branch site directories to null branch site directories, maintaining the tree.trees file and codon.nuc file but editing the control file to set omega to 1 (not vary) 
+
 import os
 import shutil
 
