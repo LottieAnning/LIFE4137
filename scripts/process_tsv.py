@@ -1,3 +1,6 @@
+# Source: myself (Charlotte Anning, 20150512)
+# This PYTHON job script is used to create the mapping.link file for GeneRax
+
 import csv
 
 # Function to process the input .tsv file and produce the desired output
