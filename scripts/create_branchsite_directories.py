@@ -30,6 +30,8 @@ for header in headers:
 
 print('Directories copied.')
 
+# Now edit the control and tree files
+
 directories = [d for d in os.listdir() if os.path.isdir(d) and '_' in d]
 
 for directory in directories:
@@ -41,7 +43,7 @@ for directory in directories:
         with open(controlfile_path, 'r') as file:
             lines = file.readlines()
 
-        # Modify line 3 to an output file with the directory name
+        # Modify line 3 (line 2 in python) to an output file with the directory name
         if len(lines) >= 3:
             lines[2] = f"      outfile = {directory}.txt            * Path to the output file\n"
 
@@ -51,7 +53,7 @@ for directory in directories:
     else:
         print(f"controlfile.ctl not found in {directory}")
 
-    # Add a #1 where the branch occurs in tree.trees and save it in the same directory
+    # Add a #1 where the species occurs in tree.trees and save it in the same directory
     if os.path.exists(treefile_path):
         with open(treefile_path, 'r') as file:
             tree_lines = file.read()
