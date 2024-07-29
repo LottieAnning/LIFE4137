@@ -1,3 +1,6 @@
+# Source: myself (Charlotte Anning, 20150512)
+# This SHELL job script is used to remove unecessary characters from the BUSCO output.
+
 # First move to the busco directory where the all.txt file should be.
 
 # Remove unecessary lines:
