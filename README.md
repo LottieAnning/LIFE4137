@@ -68,6 +68,9 @@ Download the copy_to_null.py script from the scripts directory above. Execute by
 
 Make a scripts directory by ```mkdir ../scripts``` (this should mean the scripts directory is directly under the Paml/ directory), download the all_headers.txt file and execute the make_scripts.py script (found in the scripts directory) from there, changing the username on lines 16,18 and 20 to match yours. To execute use: ```python3 make_scripts.py```. Submit these as sbatch jobs with the submit.sh script (found in the scripts directory), by using ```chmod +x submit.sh``` and ```./submit.sh``` and leave these running. This has just submitted 214 jobs. You can check the status of the scripts by using ```squeue -u [username] -o "%.18i %.10P %.30j %.8u %.8T %.10M %.10l %.6D %.15R"``` which will display in long format.
 
-## create_all_tsv.sh
+## create_paml_results_tsv.sh
 
+Download the create_paml_results_tsv.sh script from the scripts directory above. Execute this script in the Paml directory created earlier with the 214 directories, this will take all the logarithm of the Liklihood (lnL) values of the parameter and null tests and run a liklihood ratio test, chi-squared test and false discovery rate test (FDR). To execute this script add executive permissions ```chmod +x create_paml_results_tsv.sh``` and run ```./create_paml_results_tsv.sh```. This requires some manual editing in Excel, instructions in the script. This produces supplementary file 4.
+
+# ```print(All Done!!)```
 
