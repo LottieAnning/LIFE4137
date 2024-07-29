@@ -1,4 +1,5 @@
-# Creates directorys for each of the species with a control file, tree file and codon.nuc file
+# Source: myself (Charlotte Anning, 20150512)
+# This PYTHON job script is used to create directorys for each of the species with a customised control file, customised tree file and codon.nuc file
 
 # For each header in headers.txt copy the 'blank/' directory and name as the header:
 
