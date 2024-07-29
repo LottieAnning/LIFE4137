@@ -1,4 +1,5 @@
-# Creates directorys for each of the species with a control file, tree file and codon.nuc file
+# Source: myself (Charlotte Anning, 20150512)
+# This PYTHON job script is used to creates null directorys for each of the species with a customised control file, customsied tree file and codon.nuc file
 
 # For each header in null_headers.txt copy the 'null_blank/' directory and name as the header:
 
@@ -28,6 +29,8 @@ for header in headers:
         print(f'Target directory {target_directory} already exists, skipping...')
 
 print('Directories copied.')
+
+# Now edit control and trees files
 
 directories = [d for d in os.listdir() if os.path.isdir(d) and '_' in d]
 
