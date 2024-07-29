@@ -1,6 +1,6 @@
 # LIFE4137
 
-## This is the github page for my thesis titled "...", all scripts mentioned will be accomponied by instructions of what needs changing and how to execute them
+### This is the github page for my thesis titled "The Evolution of Specialised Ribosomes and Translational Regulation in Eukaryotes as indicated by the Ribosomal Small Subunit Protein S18", all scripts mentioned will be accomponied by instructions of what needs changing and how to execute them.
 
 ## download_ncbi_databases.sh
 
@@ -72,5 +72,5 @@ Make a scripts directory by ```mkdir ../scripts``` (this should mean the scripts
 
 Download the create_paml_results_tsv.sh script from the scripts directory above. Execute this script in the Paml directory created earlier with the 214 directories, this will take all the logarithm of the Liklihood (lnL) values of the parameter and null tests and run a liklihood ratio test, chi-squared test and false discovery rate test (FDR). To execute this script add executive permissions ```chmod +x create_paml_results_tsv.sh``` and run ```./create_paml_results_tsv.sh```. This requires some manual editing in Excel, instructions in the script. This produces supplementary file 4.
 
-# ```print(All Done!!)```
+# ```print('All Done!!')```
 
