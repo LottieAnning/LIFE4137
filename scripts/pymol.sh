@@ -1,3 +1,6 @@
+# Source: myself (Charlotte Anning, 20150512)
+# This SHELL job script describes how to view the RPS18 protein in PYMOL
+
 # Download Mouse Kidney Ribosome from: https://www.rcsb.org/structure/7CPU
 # Load into Pymol
 
