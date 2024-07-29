@@ -1,3 +1,6 @@
+# Source: myself (Charlotte Anning, 20150512)
+# This PYTHON job script is used to seperate a nucleotide sequence to codons
+
 def process_file(input_file, output_file):
     with open(input_file, 'r') as infile, open(output_file, 'w') as outfile:
         for line in infile:
