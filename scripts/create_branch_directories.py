@@ -1,4 +1,5 @@
-# Creates directorys for each of the species with a control file, tree file and codon.nuc file
+# Source: myself (Charlotte Anning, 20150512)
+# This PYTHON job script is used to create directorys for each of the species with a customised control file, tree file and codon.nuc file
 
 # For each header in headers.txt copy the 'blank/' directory and name as the header:
 
@@ -31,16 +32,17 @@ print('Directories copied.')
 
 directories = [d for d in os.listdir() if os.path.isdir(d) and '_' in d]
 
+# Edit the controlfile to have customised output file name
+
 for directory in directories:
     controlfile_path = os.path.join(directory, 'controlfile.ctl')
-    treefile_path = os.path.join(directory, 'tree.trees')
 
     # Check if the controlfile.ctl exists
     if os.path.exists(controlfile_path):
         with open(controlfile_path, 'r') as file:
             lines = file.readlines()
 
-        # Modify line 3 to an output file with the directory name
+        # Modify line 3 (2 in python) to an output file with the directory name
         if len(lines) >= 3:
             lines[2] = f"      outfile = {directory}.txt            * Path to the output file\n"
 
