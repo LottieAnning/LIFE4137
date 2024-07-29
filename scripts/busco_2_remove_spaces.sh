@@ -1,4 +1,5 @@
-# This script removes the text from the lines with numbered data and any tabs or spaces
+# Source: myself (Charlotte Anning, 20150512)
+# This SHELL job script removes the text from the lines with numbered data and any tabs or spaces
 
 sed -i '' 's/Complete BUSCOs (C)//g' temp2.txt
 sed -i '' 's/Complete and single-copy BUSCOs (S)//g' temp2.txt
@@ -15,3 +16,5 @@ sed -i '' 's/Contigs N50//g' temp2.txt
 sed -i '' -e 's/[[:space:]]\{1,\}/ /g' -e 's/^ *//' -e 's/ *$//' temp2.txt
 
 mv temp2.txt temp2.tsv
+
+# Now run busco_3_columns_to_rows.py
