@@ -40,4 +40,4 @@ input_file = 'temp.txt'
 output_file = 'temp2.txt'
 process_file(input_file, output_file)
 
-# Now run chop.sh to remove all other unecessary text and tabs/spaces
+# Now run busco_2_remove_spaces.sh to remove all other unecessary text and tabs/spaces
