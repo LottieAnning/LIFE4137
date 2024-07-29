@@ -1,3 +1,6 @@
+# Source: myself (Charlotte Anning, 20150512)
+# This PYTHON job script is used to create the all_aa.fasta file, by reading the check_isoforms.tsv from the blast result
+
 import csv
 
 def search_protein_sequences(tsv_file, output_file):
@@ -8,10 +11,10 @@ def search_protein_sequences(tsv_file, output_file):
             for row in reader:
                 if len(row) < 2:
                     continue  # Skip rows that do not have at least two columns
-                file_name = row[0] + ".faa"
-                species_name = row[0].replace('_', '')
-                protein_id = row[1]
-                no_underscores_or_fullstops_protien_id = row[1].replace('_', '').replace('.', '')
+                file_name = row[0] + ".faa"        # Gets file name by adding .faa to species name
+                species_name = row[0].replace('_', '')        # Removes underscore to outputed species name
+                protein_id = row[1]        # Gets protein ID
+                no_underscores_or_fullstops_protien_id = row[1].replace('_', '').replace('.', '')        # Removes underscore and fullstops from protien ID
                 sequence_found = False
 
                 try:
