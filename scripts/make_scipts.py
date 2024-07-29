@@ -1,3 +1,6 @@
+# Source: myself (Charlotte Anning, 20150512)
+# This PYTHON job script is used to make scripts to run paml on the 214 directories created for null and parameter branches and branch sites
+
 headers_file_path = 'all_headers.txt'
 
 # Read the headers from the file headers file as directories
