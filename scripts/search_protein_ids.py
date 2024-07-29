@@ -1,3 +1,6 @@
+# Source: myself (Charlotte Anning, 20150512)
+# This PYTHON job script is used to add gene IDs for protien IDs in the blast output supplementary file 3
+
 import csv
 import re
 
