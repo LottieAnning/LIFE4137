@@ -1,4 +1,5 @@
-# This script will take only the site/branch name and lnL value from the PAML output files and put them into one tsv which can then be edited to retrieve results (supplementary file 4)
+# Source: myself (Charlotte Anning, 20150512)
+# This SHELL job script is used to take only the site/branch name and lnL value from the PAML output files and put them into one tsv which can then be edited to retrieve results (supplementary file 4)
 
 grep -r "lnL" ./ | grep -v "(ntime" > all.tsv 								# Take all lnL results from the rsv file, -v is to not obtain the same result from the .txt file
 sed -i.bak -e 's#\./##g' -e 's#/rst##g' -e 's#:lnL = ##g' all.tsv			# Remove all unwanted characters
