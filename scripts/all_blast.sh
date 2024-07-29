@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Source: myself (Charlotte Anning, 20150512)
+# This SLURM job script is used to submit a BLAST job to the cluster.
+# Replace [username] with your actual username.
+
 #SBATCH --partition=defq
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
@@ -56,5 +60,4 @@ cat result_*.tsv > supplementary_file_3.tsv
 headers="Species\tQuery sequence ID\tSubject sequence ID\tPercentage identity\tAlignment length\tNumber of mismatches\tNumber of gap openings\tStart of alignment in query\tEnd of alignment in query\tStart of alignment in subject\tEnd of alignment in subject\tE-value\tBit score"
 file="supplementary_file_3.tsv"
 echo -e "$headers\n$(cat "$file")" > temp_file && mv temp_file "$file"
-
 
