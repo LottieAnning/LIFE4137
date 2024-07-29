@@ -72,5 +72,9 @@ Make a scripts directory by ```mkdir ../scripts``` (this should mean the scripts
 
 Download the create_paml_results_tsv.sh script from the scripts directory above. Execute this script in the Paml directory created earlier with the 214 directories, this will take all the logarithm of the Liklihood (lnL) values of the parameter and null tests and run a liklihood ratio test, chi-squared test and false discovery rate test (FDR). To execute this script add executive permissions ```chmod +x create_paml_results_tsv.sh``` and run ```./create_paml_results_tsv.sh```. This requires some manual editing in Excel, instructions in the script. This produces supplementary file 4.
 
+## pymol.sh
+
+Follow the instructions in this script to observe the RPS18 protein in the ribosome structure. To colour by hydrophobicity, this also requires the color_h.py script, written by Sian Bray
+
 # ```print('All Done!!')```
 
