@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Source: myself (Charlotte Anning, 20150512)
+# This SLURM job script is used to submit a GENERAX job to the cluster.
+# Replace [username] with your actual username.
+
 #SBATCH --partition=defq
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
