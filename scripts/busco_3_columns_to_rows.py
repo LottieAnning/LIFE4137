@@ -1,3 +1,6 @@
+# Source: myself (Charlotte Anning, 20150512)
+# This SHELL job script is used to swap data in columns to rows, every 13th line
+
 input_file = 'temp2.tsv'
 output_file = 'supplementary_file_2.tsv'
 chunk_size = 13
@@ -17,3 +20,4 @@ combined_lines = list(combine_lines(lines, chunk_size))
 with open(output_file, 'w') as file:
     file.write('\n'.join(combined_lines) + '\n')
 
+# Now run busco_4_add_headers.sh
