@@ -1,3 +1,6 @@
+# Source: myself (Charlotte Anning, 20150512)
+# This PYTHON job script is used to create the file all_nt.fasta from the blast_output.tsv (can also use the check_isoforms.tsv)
+
 import csv
 
 def search_protein_sequences(tsv_file, output_file):
@@ -8,10 +11,10 @@ def search_protein_sequences(tsv_file, output_file):
             for row in reader:
                 if len(row) < 2:
                     continue  # Skip rows that do not have at least two columns
-                file_name = row[0] + ".fna"
-                species_name = row[0].replace('_', '')
-                protein_id = row[1]
-                no_underscores_or_fullstops_protien_id = row[1].replace('_', '').replace('.', '')
+                file_name = row[0] + ".fna"        # Adds .fna to species name to get file name
+                species_name = row[0].replace('_', '')        # Removes underscore from outputted species name
+                protein_id = row[1]        # Gets protein ID
+                no_underscores_or_fullstops_protien_id = row[1].replace('_', '').replace('.', '')        # Removes underscores and fullstops from outputted protien ID
                 sequence_found = False
 
                 try:
