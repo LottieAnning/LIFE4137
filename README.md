@@ -78,7 +78,7 @@ Download the create_paml_results_tsv.sh script from the scripts directory above.
 
 ## pymol.sh
 
-Follow the instructions in this script to observe the RPS18 protein in the ribosome structure. To colour by hydrophobicity, this also requires the color_h.py script, written by Sian Bray
+Follow the instructions in this script to observe the RPS18 protein in the ribosome structure and colour by charge. 
 
 # ```print('All Done!!')```
 
