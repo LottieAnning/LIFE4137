@@ -9,9 +9,10 @@ select protein_only, polymer.protein
 hide everything
 show cartoon, protein_only
 
-# To colour by hydrophobicity run the color_h.py script created by Sian:
-run color_h.py
-color_h all
+# To colour by electrostatic charge register at: http://www.poissonboltzmann.org/ and run:
+apt-get install apbs
+# This should make APBS appear in the plugin menu
+# Run APBS which takes a few minutes
 
 # To find the protein you want in the pdb file, e.g. protein RPS18, first search for the protein name which will be in this format:
 58 polymer     nat '40S ribosomal protein S18'                17759.777   1   ?         ? ? ? 
