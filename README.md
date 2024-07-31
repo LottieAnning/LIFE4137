@@ -1,6 +1,6 @@
 # LIFE4137
 
-### This is the github page for my thesis titled "The Evolution of Specialised Ribosomes and Translational Regulation in Eukaryotes as indicated by the Ribosomal Small Subunit Protein S18", all scripts mentioned will be accomponied by instructions of what needs changing and how to execute them.
+### This is the github page for my thesis titled "Understanding the Evolution of Control of Translation in Specialised Ribosomes: a Detailed Study of Ribosomal Proteins S18", all scripts mentioned will be accomponied by instructions of what needs changing and how to execute them.
 
 <img width="718" alt="pipeline_overview" src="https://github.com/user-attachments/assets/ed1d1407-65b8-4983-abb3-0a9388958de9">
 
